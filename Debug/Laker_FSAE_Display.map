@@ -1,0 +1,1434 @@
+******************************************************************************
+                  TI ARM Linker Unix v18.12.1                  
+******************************************************************************
+>> Linked Thu Apr 11 04:35:57 2019
+
+OUTPUT FILE NAME:   <Laker_FSAE_Display.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 0000a579
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  MAIN                  00000000   00040000  0000fcd8  00030328  R  X
+  INFO                  00200000   00004000  00000000  00004000  R  X
+  SRAM_CODE             01000000   00010000  0000093d  0000f6c3  RW X
+  SRAM_DATA             20000000   00010000  0000093d  0000f6c3  RW  
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    0000fcd8   0000fcd8    r-x
+  00000000    00000000    000000e4   000000e4    r-- .intvecs
+  000000e4    000000e4    0000a5c4   0000a5c4    r-x .text
+  0000a6a8    0000a6a8    00005580   00005580    r-- .const
+  0000fc28    0000fc28    000000b0   000000b0    r-- .cinit
+20000000    20000000    00000740   00000000    rw-
+  20000000    20000000    000000e4   00000000    rw- .vtable
+  200000e4    200000e4    00000525   00000000    rw- .bss
+  2000060c    2000060c    00000134   00000000    rw- .data
+2000fe00    2000fe00    00000200   00000000    rw-
+  2000fe00    2000fe00    00000200   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    000000e4     
+                  00000000    000000e4     startup_msp432p401r_ccs.obj (.intvecs:retain)
+
+.text      0    000000e4    0000a5c4     
+                  000000e4    0000159c     flash.obj (.text)
+                  00001680    00000d80     cs.obj (.text)
+                  00002400    00000b9c     display.obj (.text)
+                  00002f9c    00000a4e     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:__TI_printfi)
+                  000039ea    00000002                                   : div0.asm.obj (.text)
+                  000039ec    000008a4     spi.obj (.text)
+                  00004290    00000838     pcm.obj (.text)
+                  00004ac8    00000778     kitronix320x240x16_ssd2119_spi.obj (.text)
+                  00005240    00000630     string.obj (.text)
+                  00005870    000005d8     Flash_custom.obj (.text)
+                  00005e48    00000508     rtc_c.obj (.text)
+                  00006350    00000498     circle.obj (.text)
+                  000067e8    00000490     line.obj (.text)
+                  00006c78    00000480     gpio.obj (.text)
+                  000070f8    00000452     image.obj (.text)
+                  0000754a    00000002     --HOLE-- [fill = 0]
+                  0000754c    000003f0     interrupt.obj (.text)
+                  0000793c    00000350     Math.obj (.text)
+                  00007c8c    0000033e     rectangle.obj (.text)
+                  00007fca    00000002     --HOLE-- [fill = 0]
+                  00007fcc    00000328     system_msp432p401r.obj (.text)
+                  000082f4    00000270     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_a)
+                  00008564    00000266     context.obj (.text)
+                  000087ca    00000002     --HOLE-- [fill = 0]
+                  000087cc    00000254     Timing.obj (.text)
+                  00008a20    00000244     sysctl.obj (.text)
+                  00008c64    000001d0     Inputs.obj (.text)
+                  00008e34    000001d0     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_g)
+                  00009004    000001d0     main.obj (.text)
+                  000091d4    000001b6     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_add_t2.asm.obj (.text)
+                  0000938a    00000002     --HOLE-- [fill = 0]
+                  0000938c    000001a0     HAL_MSP_EXP432P401R_KITRONIX320X240_SSD2119_SPI.obj (.text)
+                  0000952c    0000013c     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_e)
+                  00009668    00000136                                   : fd_div_t2.asm.obj (.text)
+                  0000979e    00000134     display.obj (.text)
+                  000098d2    00000002     --HOLE-- [fill = 0]
+                  000098d4    00000124     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:fcvt)
+                  000099f8    00000110                                   : s_scalbn.c.obj (.text:scalbn)
+                  00009b08    000000fc                                   : fd_mul_t2.asm.obj (.text)
+                  00009c04    000000d8     wdt_a.obj (.text)
+                  00009cdc    000000c0     fpu.obj (.text)
+                  00009d9c    000000b1     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_ltostr)
+                  00009e4d    00000001     --HOLE-- [fill = 0]
+                  00009e4e    0000009c                                   : memcpy_t2.asm.obj (.text)
+                  00009eea    00000096                                   : ull_div_t2.asm.obj (.text)
+                  00009f80    00000086                                   : fd_cmp_t2.asm.obj (.text:__aeabi_cdcmple)
+                  0000a006    00000086                                   : fd_cmp_t2.asm.obj (.text:__aeabi_cdrcmple)
+                  0000a08c    0000007a                                   : memset_t2.asm.obj (.text)
+                  0000a106    0000006e                                   : _printfi.c.obj (.text:_mcpy)
+                  0000a174    0000006e                                   : fd_tos_t2.asm.obj (.text)
+                  0000a1e2    00000068                                   : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  0000a24a    00000002     --HOLE-- [fill = 0]
+                  0000a24c    00000064                                   : s_frexp.c.obj (.text:frexp)
+                  0000a2b0    00000056                                   : _printfi.c.obj (.text:_pconv_f)
+                  0000a306    00000054                                   : ltoa.c.obj (.text:ltoa)
+                  0000a35a    00000052                                   : _printfi.c.obj (.text:_ecpy)
+                  0000a3ac    0000004c                                   : atoi.c.obj (.text:atoi)
+                  0000a3f8    00000048                                   : fd_toi_t2.asm.obj (.text)
+                  0000a440    00000044                                   : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  0000a484    00000040                                   : sprintf.c.obj (.text:sprintf)
+                  0000a4c4    0000003e                                   : _printfi.c.obj (.text:_fcpy)
+                  0000a502    0000003e     cpu.obj (.text)
+                  0000a540    00000038     rtsv7M4_T_le_v4SPD16_eabi.lib : fs_tod_t2.asm.obj (.text)
+                  0000a578    00000034                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  0000a5ac    0000002e                                   : i_tofd_t2.asm.obj (.text)
+                  0000a5da    0000001c                                   : memccpy.c.obj (.text:memccpy)
+                  0000a5f6    0000001a                                   : s_copysign.c.obj (.text:copysign)
+                  0000a610    00000018                                   : sprintf.c.obj (.text:_outs)
+                  0000a628    00000016                                   : strchr.c.obj (.text:strchr)
+                  0000a63e    00000014                                   : strlen.c.obj (.text:strlen)
+                  0000a652    00000012                                   : wcslen.c.obj (.text:wcslen)
+                  0000a664    0000000e                                   : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  0000a672    0000000e     startup_msp432p401r_ccs.obj (.text)
+                  0000a680    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init)
+                  0000a68c    0000000a                                   : sprintf.c.obj (.text:_outc)
+                  0000a696    00000002     --HOLE-- [fill = 0]
+                  0000a698    00000008                                   : errno.c.obj (.text:__aeabi_errno_addr)
+                  0000a6a0    00000004                                   : pre_init.c.obj (.text:_system_pre_init)
+                  0000a6a4    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.const     0    0000a6a8    00005580     
+                  0000a6a8    000016bd     fontcmtt48.obj (.const:.string:g_pucCmtt48Data)
+                  0000bd65    0000114a     fontcm38b.obj (.const:.string:g_pucCm38bData)
+                  0000ceaf    00000d2c     fontcm30b.obj (.const:.string:g_pucCm30bData)
+                  0000dbdb    00000a29     fontcm22b.obj (.const:.string:g_pucCm22bData)
+                  0000e604    0000094d     fontcm20b.obj (.const:.string:g_pucCm20bData)
+                  0000ef51    00000320     Gear.obj (.const:.string:pixel_Gear1BPP_UNCOMP)
+                  0000f271    00000320     N.obj (.const:.string:pixel_N1BPP_UNCOMP)
+                  0000f591    00000101     rtsv7M4_T_le_v4SPD16_eabi.lib : ctype.c.obj (.const:.string:_ctypes_)
+                  0000f692    00000002     --HOLE-- [fill = 0]
+                  0000f694    000000c8     fontcm20b.obj (.const:g_sFontCm20b)
+                  0000f75c    000000c8     fontcm22b.obj (.const:g_sFontCm22b)
+                  0000f824    000000c8     fontcm30b.obj (.const:g_sFontCm30b)
+                  0000f8ec    000000c8     fontcm38b.obj (.const:g_sFontCm38b)
+                  0000f9b4    000000c8     fontcmtt48.obj (.const:g_sFontCmtt48)
+                  0000fa7c    00000050     interrupt.obj (.const:g_pulRegs)
+                  0000facc    0000002c     kitronix320x240x16_ssd2119_spi.obj (.const:g_sKitronix320x240x16_SSD2119)
+                  0000faf8    00000020     interrupt.obj (.const:g_pulPriority)
+                  0000fb18    0000001c     HAL_MSP_EXP432P401R_KITRONIX320X240_SSD2119_SPI.obj (.const:$P$T0$1)
+                  0000fb34    0000001c     gpio.obj (.const:GPIO_PORT_TO_INT)
+                  0000fb50    00000014     display.obj (.const:$P$T14$15)
+                  0000fb64    00000010     Gear.obj (.const:Gear1BPP_UNCOMP)
+                  0000fb74    00000010     N.obj (.const:N1BPP_UNCOMP)
+                  0000fb84    00000008     display.obj (.const:$P$T0$1)
+                  0000fb8c    00000008     display.obj (.const:$P$T1$2)
+                  0000fb94    00000008     display.obj (.const:$P$T10$11)
+                  0000fb9c    00000008     display.obj (.const:$P$T11$12)
+                  0000fba4    00000008     display.obj (.const:$P$T12$13)
+                  0000fbac    00000008     display.obj (.const:$P$T13$14)
+                  0000fbb4    00000008     display.obj (.const:$P$T2$3)
+                  0000fbbc    00000008     display.obj (.const:$P$T3$4)
+                  0000fbc4    00000008     display.obj (.const:$P$T4$5)
+                  0000fbcc    00000008     display.obj (.const:$P$T5$6)
+                  0000fbd4    00000008     display.obj (.const:$P$T6$7)
+                  0000fbdc    00000008     display.obj (.const:$P$T7$8)
+                  0000fbe4    00000008     display.obj (.const:$P$T8$9)
+                  0000fbec    00000008     display.obj (.const:$P$T9$10)
+                  0000fbf4    00000008     interrupt.obj (.const:g_pulDisRegs)
+                  0000fbfc    00000008     interrupt.obj (.const:g_pulEnRegs)
+                  0000fc04    00000008     interrupt.obj (.const:g_pulPendRegs)
+                  0000fc0c    00000008     interrupt.obj (.const:g_pulUnpendRegs)
+                  0000fc14    00000008     Gear.obj (.const:palette_Gear1BPP_UNCOMP)
+                  0000fc1c    00000008     N.obj (.const:palette_N1BPP_UNCOMP)
+                  0000fc24    00000004     Flash_custom.obj (.const:.string:$P$T0$1)
+
+.cinit     0    0000fc28    000000b0     
+                  0000fc28    00000079     (.cinit..data.load) [load image, compression = lzss]
+                  0000fca1    00000003     --HOLE-- [fill = 0]
+                  0000fca4    0000000c     (__TI_handler_table)
+                  0000fcb0    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  0000fcb8    00000008     (.cinit..vtable.load) [load image, compression = zero_init]
+                  0000fcc0    00000018     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.binit     0    00000000    00000000     
+
+.vtable    0    20000000    000000e4     UNINITIALIZED
+                  20000000    000000e4     interrupt.obj (.vtable)
+
+.bss       0    200000e4    00000525     UNINITIALIZED
+                  200000e4    00000400     image.obj (.bss:g_pulConvertedPalette)
+                  200004e4    000000c8     (.common:read_shift_data)
+                  200005ac    0000001c     (.common:g_sContext)
+                  200005c8    00000010     (.common:clocks)
+                  200005d8    0000000c     (.common:gearCheck)
+                  200005e4    00000008     cs.obj (.bss)
+                  200005ec    00000008     (.common:RPMc)
+                  200005f4    00000004     (.common:Speedc)
+                  200005f8    00000004     (.common:addr_pointer)
+                  200005fc    00000004     (.common:currentPin)
+                  20000600    00000004     (.common:status_ISR)
+                  20000604    00000004     (.common:tempRPM)
+                  20000608    00000001     (.common:carStatus)
+
+.data      0    2000060c    00000134     UNINITIALIZED
+                  2000060c    00000070     main.obj (.data)
+                  2000067c    00000040     flash.obj (.data:__getBurstProgramRegs)
+                  200006bc    00000030     gpio.obj (.data:GPIO_PORT_TO_BASE)
+                  200006ec    00000018     Timing.obj (.data)
+                  20000704    00000014     Math.obj (.data:Active_Gear_Ratio)
+                  20000718    00000014     Inputs.obj (.data)
+                  2000072c    00000008     Flash_custom.obj (.data)
+                  20000734    00000004     Math.obj (.data)
+                  20000738    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : errno.c.obj (.data)
+                  2000073c    00000004     system_msp432p401r.obj (.data)
+
+.stack     0    2000fe00    00000200     UNINITIALIZED
+                  2000fe00    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  2000fe04    000001fc     --HOLE--
+
+MODULE SUMMARY
+
+       Module                                                code    ro data   rw data
+       ------                                                ----    -------   -------
+    ./
+       display.obj                                           2972    132       80     
+       Flash_custom.obj                                      1496    4         490    
+       Math.obj                                              848     0         56     
+       system_msp432p401r.obj                                808     0         8      
+       main.obj                                              464     0         224    
+       Timing.obj                                            596     0         48     
+       Inputs.obj                                            464     0         48     
+       startup_msp432p401r_ccs.obj                           14      228       0      
+    +--+-----------------------------------------------------+-------+---------+---------+
+       Total:                                                7662    364       954    
+                                                                                      
+    ./GrLib/fonts/
+       fontcmtt48.obj                                        0       6021      0      
+       fontcm38b.obj                                         0       4626      0      
+       fontcm30b.obj                                         0       3572      0      
+       fontcm22b.obj                                         0       2801      0      
+       fontcm20b.obj                                         0       2581      0      
+    +--+-----------------------------------------------------+-------+---------+---------+
+       Total:                                                0       19601     0      
+                                                                                      
+    ./GrLib/grlib/
+       image.obj                                             1106    0         2048   
+       string.obj                                            1584    0         0      
+       circle.obj                                            1176    0         0      
+       line.obj                                              1168    0         0      
+       rectangle.obj                                         830     0         0      
+       context.obj                                           614     0         0      
+       display.obj                                           308     0         0      
+    +--+-----------------------------------------------------+-------+---------+---------+
+       Total:                                                6786    0         2048   
+                                                                                      
+    ./LcdDriver/
+       kitronix320x240x16_ssd2119_spi.obj                    1912    44        0      
+       HAL_MSP_EXP432P401R_KITRONIX320X240_SSD2119_SPI.obj   416     28        0      
+    +--+-----------------------------------------------------+-------+---------+---------+
+       Total:                                                2328    72        0      
+                                                                                      
+    ./driverlib/MSP432P4xx/
+       flash.obj                                             5532    0         128    
+       cs.obj                                                3456    0         16     
+       spi.obj                                               2212    0         0      
+       pcm.obj                                               2104    0         0      
+       interrupt.obj                                         1008    144       456    
+       rtc_c.obj                                             1288    0         0      
+       gpio.obj                                              1152    28        96     
+       sysctl.obj                                            580     0         0      
+       wdt_a.obj                                             216     0         0      
+       fpu.obj                                               192     0         0      
+       cpu.obj                                               62      0         0      
+    +--+-----------------------------------------------------+-------+---------+---------+
+       Total:                                                17802   172       696    
+                                                                                      
+    ./images/
+       Gear.obj                                              0       824       0      
+       N.obj                                                 0       824       0      
+    +--+-----------------------------------------------------+-------+---------+---------+
+       Total:                                                0       1648      0      
+                                                                                      
+    /opt/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib/rtsv7M4_T_le_v4SPD16_eabi.lib
+       _printfi.c.obj                                        4851    0         0      
+       fd_add_t2.asm.obj                                     438     0         0      
+       fd_div_t2.asm.obj                                     310     0         0      
+       s_scalbn.c.obj                                        272     0         0      
+       fd_cmp_t2.asm.obj                                     268     0         0      
+       ctype.c.obj                                           0       257       0      
+       fd_mul_t2.asm.obj                                     252     0         0      
+       memcpy_t2.asm.obj                                     156     0         0      
+       ull_div_t2.asm.obj                                    150     0         0      
+       memset_t2.asm.obj                                     122     0         0      
+       fd_tos_t2.asm.obj                                     110     0         0      
+       copy_decompress_lzss.c.obj                            104     0         0      
+       s_frexp.c.obj                                         100     0         0      
+       sprintf.c.obj                                         98      0         0      
+       ltoa.c.obj                                            84      0         0      
+       atoi.c.obj                                            76      0         0      
+       fd_toi_t2.asm.obj                                     72      0         0      
+       autoinit.c.obj                                        68      0         0      
+       fs_tod_t2.asm.obj                                     56      0         0      
+       boot_cortex_m.c.obj                                   52      0         0      
+       i_tofd_t2.asm.obj                                     46      0         0      
+       memccpy.c.obj                                         28      0         0      
+       s_copysign.c.obj                                      26      0         0      
+       strchr.c.obj                                          22      0         0      
+       strlen.c.obj                                          20      0         0      
+       wcslen.c.obj                                          18      0         0      
+       errno.c.obj                                           8       0         8      
+       copy_decompress_none.c.obj                            14      0         0      
+       copy_zero_init.c.obj                                  12      0         0      
+       exit.c.obj                                            4       0         0      
+       pre_init.c.obj                                        4       0         0      
+       div0.asm.obj                                          2       0         0      
+    +--+-----------------------------------------------------+-------+---------+---------+
+       Total:                                                7843    257       8      
+                                                                                      
+       Stack:                                                0       0         1024   
+       Linker Generated:                                     0       173       0      
+    +--+-----------------------------------------------------+-------+---------+---------+
+       Grand Total:                                          42421   22287     4730   
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 0000fcc0 records: 3, size/record: 8, table size: 24
+	.data: load addr=0000fc28, load size=00000079 bytes, run addr=2000060c, run size=00000134 bytes, compression=lzss
+	.bss: load addr=0000fcb0, load size=00000008 bytes, run addr=200000e4, run size=00000525 bytes, compression=zero_init
+	.vtable: load addr=0000fcb8, load size=00000008 bytes, run addr=20000000, run size=000000e4 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 0000fca4 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_zero_init
+	index: 1, handler: __TI_decompress_lzss
+	index: 2, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                                       
+-------   ----                                       
+0000a67f  ADC14_IRQHandler                           
+0000a67f  AES256_IRQHandler                          
+20000704  Active_Gear_Ratio                          
+0000a67f  BusFault_Handler                           
+0000a6a5  C$$EXIT                                    
+0000a67f  COMP_E0_IRQHandler                         
+0000a67f  COMP_E1_IRQHandler                         
+0000a537  CPU_basepriGet                             
+0000a529  CPU_basepriSet                             
+0000a503  CPU_cpsid                                  
+0000a519  CPU_cpsie                                  
+0000a50f  CPU_primask                                
+0000a525  CPU_wfi                                    
+0000a67f  CS_IRQHandler                              
+00002385  CS_clearInterruptFlag                      
+00001c29  CS_disableClockRequest                     
+00001d0f  CS_disableDCOExternalResistor              
+00002259  CS_disableFaultCounter                     
+00002343  CS_disableInterrupt                        
+00001c01  CS_enableClockRequest                      
+00001c71  CS_enableDCOExternalResistor               
+0000222d  CS_enableFaultCounter                      
+00002321  CS_enableInterrupt                         
+000021c5  CS_getACLK                                 
+00002185  CS_getBCLK                                 
+00001e09  CS_getDCOFrequency                         
+0000236b  CS_getEnabledInterruptStatus               
+000021a1  CS_getHSMCLK                               
+00002365  CS_getInterruptStatus                      
+0000220b  CS_getMCLK                                 
+000021e9  CS_getSMCLK                                
+00001921  CS_initClockSignal                         
+000023a7  CS_registerInterrupt                       
+00002285  CS_resetFaultCounter                       
+00001d2d  CS_setDCOCenteredFrequency                 
+00001c99  CS_setDCOExternalResistorCalibration       
+00001fad  CS_setDCOFrequency                         
+000018e5  CS_setExternalClockSourceFrequency         
+00001c4b  CS_setReferenceOscillatorFrequency         
+000022d1  CS_startFaultCounter                       
+00001a25  CS_startHFXT                               
+00001a49  CS_startHFXTWithTimeout                    
+00001b0d  CS_startLFXT                               
+00001b31  CS_startLFXTWithTimeout                    
+00001d65  CS_tuneDCOFrequency                        
+000023bb  CS_unregisterInterrupt                     
+20000610  Calc_Gear                                  
+20000614  Calc_RPM                                   
+00007a0d  Calculate_Gear                             
+000079c1  Calculate_VSS_TO_RPM                       
+00008dd3  CheckSystemInputs                          
+00008963  Clear_A1_Timeout                           
+0000896b  Clear_A2_Timeout                           
+00008985  Clear_A3_Timeout                           
+000087cd  Clock_Init                                 
+000059d7  Commit_Gear_To_Flash                       
+00009151  Compare_Gears                              
+0000a67f  DMA_ERR_IRQHandler                         
+0000a67f  DMA_INT0_IRQHandler                        
+0000a67f  DMA_INT1_IRQHandler                        
+0000a67f  DMA_INT2_IRQHandler                        
+0000a67f  DMA_INT3_IRQHandler                        
+00008d41  DebounceFindNuetral                        
+00008d79  DebounceNuetralIn                          
+0000a67f  DebugMon_Handler                           
+0000a67f  Default_Handler                            
+00002f31  Delay                                      
+0000898d  Delay_Time                                 
+0000894b  Disable_A1_Timeout                         
+0000895b  Disable_A2_Timeout                         
+0000897d  Disable_A3_Timeout                         
+0000a67f  EUSCIA0_IRQHandler                         
+0000a67f  EUSCIA1_IRQHandler                         
+0000a67f  EUSCIA2_IRQHandler                         
+0000a67f  EUSCIA3_IRQHandler                         
+0000a67f  EUSCIB0_IRQHandler                         
+0000a67f  EUSCIB1_IRQHandler                         
+0000a67f  EUSCIB2_IRQHandler                         
+0000a67f  EUSCIB3_IRQHandler                         
+0000415b  EUSCI_A_SPI_changeClockPhasePolarity       
+0000420f  EUSCI_A_SPI_clearInterruptFlag             
+0000423f  EUSCI_A_SPI_disable                        
+000041dd  EUSCI_A_SPI_disableInterrupt               
+00004229  EUSCI_A_SPI_enable                         
+000041c3  EUSCI_A_SPI_enableInterrupt                
+000041f7  EUSCI_A_SPI_getInterruptStatus             
+00004255  EUSCI_A_SPI_getReceiveBufferAddressForDMA  
+00004263  EUSCI_A_SPI_getTransmitBufferAddressForDMA 
+00004271  EUSCI_A_SPI_isBusy                         
+000040db  EUSCI_A_SPI_masterChangeClock              
+000041b3  EUSCI_A_SPI_receiveData                    
+000040bb  EUSCI_A_SPI_select4PinFunctionality        
+00004111  EUSCI_A_SPI_slaveInit                      
+0000419d  EUSCI_A_SPI_transmitData                   
+00003f8d  EUSCI_B_SPI_changeClockPhasePolarity       
+00004041  EUSCI_B_SPI_clearInterruptFlag             
+00004071  EUSCI_B_SPI_disable                        
+0000400f  EUSCI_B_SPI_disableInterrupt               
+0000405b  EUSCI_B_SPI_enable                         
+00003ff5  EUSCI_B_SPI_enableInterrupt                
+00004029  EUSCI_B_SPI_getInterruptStatus             
+00004087  EUSCI_B_SPI_getReceiveBufferAddressForDMA  
+00004095  EUSCI_B_SPI_getTransmitBufferAddressForDMA 
+000040a3  EUSCI_B_SPI_isBusy                         
+00003f11  EUSCI_B_SPI_masterChangeClock              
+00003fe5  EUSCI_B_SPI_receiveData                    
+00003ef1  EUSCI_B_SPI_select4PinFunctionality        
+00003f43  EUSCI_B_SPI_slaveInit                      
+00003fcf  EUSCI_B_SPI_transmitData                   
+00008943  Enable_A1_Timeout                          
+00008953  Enable_A2_Timeout                          
+00008973  Enable_A3_Timeout                          
+0000a67f  FLCTL_IRQHandler                           
+0000a67f  FPU_IRQHandler                             
+00009cef  FPU_disableModule                          
+00009d1b  FPU_disableStacking                        
+00009d0f  FPU_enableLazyStacking                     
+00009cdd  FPU_enableModule                           
+00009cfd  FPU_enableStacking                         
+00009d5b  FPU_setFlushToZeroMode                     
+00009d27  FPU_setHalfPrecisionMode                   
+00009d41  FPU_setNaNMode                             
+00009d75  FPU_setRoundingMode                        
+20000724  Find_Nuetral_IN                            
+0000112f  FlashCtl_clearInterruptFlag                
+00000ff3  FlashCtl_clearProgramVerification          
+00001105  FlashCtl_disableInterrupt                  
+00000661  FlashCtl_disableReadBuffering              
+0000105d  FlashCtl_disableWordProgramming            
+000010f1  FlashCtl_enableInterrupt                   
+0000060d  FlashCtl_enableReadBuffering               
+0000102d  FlashCtl_enableWordProgramming             
+00000c8d  FlashCtl_eraseSector                       
+0000111f  FlashCtl_getEnabledInterruptStatus         
+00001119  FlashCtl_getInterruptStatus                
+0000028f  FlashCtl_getMemoryInfo                     
+00000af1  FlashCtl_getReadMode                       
+000010c3  FlashCtl_getWaitState                      
+00000b1b  FlashCtl_initiateMassErase                 
+00000db1  FlashCtl_initiateSectorErase               
+00000791  FlashCtl_isSectorProtected                 
+00001069  FlashCtl_isWordProgrammingEnabled          
+00000b41  FlashCtl_performMassErase                  
+00000e49  FlashCtl_programMemory                     
+00000731  FlashCtl_protectSector                     
+00001143  FlashCtl_registerInterrupt                 
+00000fb9  FlashCtl_setProgramVerification            
+00000a85  FlashCtl_setReadMode                       
+00001085  FlashCtl_setWaitState                      
+000006c1  FlashCtl_unprotectSector                   
+00001157  FlashCtl_unregisterInterrupt               
+0000081d  FlashCtl_verifyMemory                      
+00006f9b  GPIO_clearInterruptFlag                    
+00006f5b  GPIO_disableInterrupt                      
+00006f39  GPIO_enableInterrupt                       
+00006ff3  GPIO_getEnabledInterruptStatus             
+00006f0b  GPIO_getInputPinValue                      
+00006f7d  GPIO_getInterruptStatus                    
+00006fbd  GPIO_interruptEdgeSelect                   
+000070b3  GPIO_registerInterrupt                     
+00006cb3  GPIO_setAsInputPin                         
+00006e67  GPIO_setAsInputPinWithPullDownResistor     
+00006eb9  GPIO_setAsInputPinWithPullUpResistor       
+00006c79  GPIO_setAsOutputPin                        
+00006d7d  GPIO_setAsPeripheralModuleFunctionInputPin 
+00006cf9  GPIO_setAsPeripheralModuleFunctionOutputPin
+0000706f  GPIO_setDriveStrengthHigh                  
+00007091  GPIO_setDriveStrengthLow                   
+00006e01  GPIO_setOutputHighOnPin                    
+00006e23  GPIO_setOutputLowOnPin                     
+00006e45  GPIO_toggleOutputOnPin                     
+000070d3  GPIO_unregisterInterrupt                   
+0000fb64  Gear1BPP_UNCOMP                            
+00008751  Graphics_clearDisplay                      
+000098bb  Graphics_clearDisplayOnDisplay             
+00006351  Graphics_drawCircle                        
+0000980d  Graphics_drawHorizontalLineOnDisplay       
+00007165  Graphics_drawImage                         
+00006b05  Graphics_drawLine                          
+000067e9  Graphics_drawLineH                         
+00006885  Graphics_drawLineV                         
+000097c9  Graphics_drawMultiplePixelsOnDisplay       
+00008763  Graphics_drawPixel                         
+0000979f  Graphics_drawPixelOnDisplay                
+00007c8d  Graphics_drawRectangle                     
+0000537b  Graphics_drawString                        
+00005809  Graphics_drawStringCentered                
+00009841  Graphics_drawVerticalLineOnDisplay         
+000065bf  Graphics_fillCircle                        
+00007d2f  Graphics_fillRectangle                     
+00009875  Graphics_fillRectangleOnDisplay            
+00008743  Graphics_flushBuffer                       
+000098a9  Graphics_flushOnDisplay                    
+00008725  Graphics_getDisplayHeight                  
+00008715  Graphics_getDisplayWidth                   
+000086c3  Graphics_getFontBaseline                   
+000086f9  Graphics_getFontHeight                     
+00008707  Graphics_getFontMaxWidth                   
+00008735  Graphics_getHeightOfDisplay                
+000074b9  Graphics_getImageColors                    
+000074c7  Graphics_getImageHeight                    
+000074d5  Graphics_getImageWidth                     
+0000752d  Graphics_getOffScreen8BPPSize              
+000074e3  Graphics_getOffscreen1BppImageSize         
+00007509  Graphics_getOffscreen4BppImageSize         
+00007e93  Graphics_getRectangleIntersection          
+000057f9  Graphics_getStringBaseline                 
+00005851  Graphics_getStringHeight                   
+00005861  Graphics_getStringMaxWidth                 
+00005281  Graphics_getStringWidth                    
+000087bd  Graphics_getWidthOfDisplay                 
+00008565  Graphics_initContext                       
+00007f79  Graphics_isPointWithinRectangle            
+00007e41  Graphics_isRectangleOverlap                
+00008679  Graphics_setBackgroundColor                
+00008693  Graphics_setBackgroundColorTranslated      
+000085af  Graphics_setClipRegion                     
+000086a9  Graphics_setFont                           
+000086d1  Graphics_setForegroundColor                
+000086e7  Graphics_setForegroundColorTranslated      
+00009893  Graphics_translateColorOnDisplay           
+000094df  HAL_LCD_delay                              
+000094c9  HAL_LCD_deselectLCD                        
+0000938d  HAL_LCD_initLCD                            
+000094b3  HAL_LCD_selectLCD                          
+00009439  HAL_LCD_writeCommand                       
+0000946d  HAL_LCD_writeData                          
+0000a67f  HardFault_Handler                          
+200006ec  Input_Capt_ISR_Status                      
+0000770f  Interrupt_disableInterrupt                 
+0000755f  Interrupt_disableMaster                    
+0000790d  Interrupt_disableSleepOnIsrExit            
+0000769d  Interrupt_enableInterrupt                  
+0000754f  Interrupt_enableMaster                     
+000078fb  Interrupt_enableSleepOnIsrExit             
+00007677  Interrupt_getPriority                      
+000075ef  Interrupt_getPriorityGrouping              
+000078db  Interrupt_getPriorityMask                  
+000078f5  Interrupt_getVectorTableAddress            
+00007781  Interrupt_isEnabled                        
+0000780d  Interrupt_pendInterrupt                    
+0000756f  Interrupt_registerInterrupt                
+00007627  Interrupt_setPriority                      
+000075d5  Interrupt_setPriorityGrouping              
+000078cb  Interrupt_setPriorityMask                  
+000078e5  Interrupt_setVectorTableAddress            
+0000787d  Interrupt_unpendInterrupt                  
+000075c1  Interrupt_unregisterInterrupt              
+00004ac9  Kitronix320x240x16_SSD2119Init             
+00004f41  Kitronix320x240x16_SSD2119LineDraw         
+00004c83  Kitronix320x240x16_SSD2119_setCursorLtoR   
+00004cbf  Kitronix320x240x16_SSD2119_setCursorTtoB   
+00005a19  Log_Counter_Data                           
+00005ab9  Log_Shift_Data                             
+2000065c  MPH_IN                                     
+0000a67f  MemManage_Handler                          
+0000fb74  N1BPP_UNCOMP                               
+0000a67f  NMI_Handler                                
+20000718  Nuetral_Flag                               
+2000071c  Nuetral_IN                                 
+00008c65  Nuetral_Inputs_Setup                       
+00008c79  OIL_Pressure_Setup                         
+20000720  Oil_IN                                     
+0000a67f  PCM_IRQHandler                             
+00004a6b  PCM_clearInterruptFlag                     
+00004a41  PCM_disableInterrupt                       
+00004a19  PCM_disableRudeMode                        
+00004a2d  PCM_enableInterrupt                        
+00004a07  PCM_enableRudeMode                         
+00004413  PCM_getCoreVoltageLevel                    
+00004a5b  PCM_getEnabledInterruptStatus              
+00004a55  PCM_getInterruptStatus                     
+000043b9  PCM_getPowerMode                           
+000049fb  PCM_getPowerState                          
+0000492d  PCM_gotoLPM0                               
+0000494b  PCM_gotoLPM0InterruptSafe                  
+00004967  PCM_gotoLPM3                               
+000049df  PCM_gotoLPM3InterruptSafe                  
+00004901  PCM_gotoLPM4                               
+00004911  PCM_gotoLPM4InterruptSafe                  
+00004a7f  PCM_registerInterrupt                      
+00004387  PCM_setCoreVoltageLevel                    
+000043a9  PCM_setCoreVoltageLevelNonBlocking         
+00004397  PCM_setCoreVoltageLevelWithTimeout         
+000045b9  PCM_setPowerMode                           
+000045c9  PCM_setPowerModeNonBlocking                
+000045d9  PCM_setPowerModeWithTimeout                
+0000488b  PCM_setPowerState                          
+000048ad  PCM_setPowerStateNonBlocking               
+0000489b  PCM_setPowerStateWithTimeout               
+000048bd  PCM_shutdownDevice                         
+00004a93  PCM_unregisterInterrupt                    
+00008c9b  PORT1_IRQHandler                           
+00008c9b  PORT1_IRQHandler                           
+00008ccd  PORT2_IRQHandler                           
+00008ccd  PORT2_IRQHandler                           
+00008cf5  PORT3_IRQHandler                           
+00008cf5  PORT3_IRQHandler                           
+0000a67f  PORT4_IRQHandler                           
+0000a67f  PORT5_IRQHandler                           
+0000a67f  PORT6_IRQHandler                           
+0000a67f  PSS_IRQHandler                             
+0000a67f  PendSV_Handler                             
+00008db3  PortInit                                   
+00002ab1  Print_Gear                                 
+200006fc  Pulse_Count_RPM                            
+20000700  Pulse_Count_VSS                            
+200006f8  RPM_Capt_Pointer                           
+20000660  RPM_IN                                     
+00008c85  RPM_VSS_Input_Setup                        
+200005ec  RPMc                                       
+0000a67f  RTC_C_IRQHandler                           
+000062a5  RTC_C_clearInterruptFlag                   
+000060ef  RTC_C_convertBCDToBinary                   
+00006107  RTC_C_convertBinaryToBCD                   
+0000604b  RTC_C_definePrescaleEvent                  
+00006175  RTC_C_disableInterrupt                     
+0000611f  RTC_C_enableInterrupt                      
+00005f7d  RTC_C_getCalendarTime                      
+00006245  RTC_C_getEnabledInterruptStatus            
+000061dd  RTC_C_getInterruptStatus                   
+00006073  RTC_C_getPrescaleValue                     
+00005e67  RTC_C_holdClock                            
+00005f0b  RTC_C_initCalendar                         
+000062eb  RTC_C_registerInterrupt                    
+00005fe3  RTC_C_setCalendarAlarm                     
+0000601b  RTC_C_setCalendarEvent                     
+00005eb5  RTC_C_setCalibrationData                   
+00005e85  RTC_C_setCalibrationFrequency              
+0000609f  RTC_C_setPrescaleValue                     
+00005ee1  RTC_C_setTemperatureCompensation           
+00005e49  RTC_C_startClock                           
+00006309  RTC_C_unregisterInterrupt                  
+00008d6d  ReadBtnFindN                               
+00008da5  ReadBtnNuetralIn                           
+200006f4  Read_Count                                 
+00005e09  Read_Counter_Data                          
+0000793d  Read_Inputs                                
+00005da5  Read_Shift_Data_From_Flash                 
+0000a673  Reset_Handler                              
+00003baf  SPI_changeClockPhasePolarity               
+00003b09  SPI_changeMasterClock                      
+00003d61  SPI_clearInterruptFlag                     
+00003ce3  SPI_disableInterrupt                       
+00003c3d  SPI_disableModule                          
+00003cbd  SPI_enableInterrupt                        
+00003c21  SPI_enableModule                           
+00003d31  SPI_getEnabledInterruptStatus              
+00003d09  SPI_getInterruptStatus                     
+00003c59  SPI_getReceiveBufferAddressForDMA          
+00003c75  SPI_getTransmitBufferAddressForDMA         
+00003a1d  SPI_initMaster                             
+00003b31  SPI_initSlave                              
+00003ca1  SPI_isBusy                                 
+00003c05  SPI_receiveData                            
+00003d87  SPI_registerInterrupt                      
+00003ae3  SPI_selectFourPinFunctionality             
+00003bdf  SPI_transmitData                           
+00003e45  SPI_unregisterInterrupt                    
+0000a67f  SVC_Handler                                
+200005f4  Speedc                                     
+00008c13  SysCtl_disableGlitchFilter                 
+00008aa3  SysCtl_disableNMISource                    
+00008bab  SysCtl_disablePeripheralAtCPUHalt          
+00008aed  SysCtl_disableSRAMBank                     
+00008b71  SysCtl_disableSRAMBankRetention            
+00008c07  SysCtl_enableGlitchFilter                  
+00008ab7  SysCtl_enableNMISource                     
+00008b97  SysCtl_enablePeripheralAtCPUHalt           
+00008ad1  SysCtl_enableSRAMBank                      
+00008b55  SysCtl_enableSRAMBankRetention             
+00008a9d  SysCtl_getFlashSize                        
+00008acb  SysCtl_getNMISourceStatus                  
+00008a97  SysCtl_getSRAMSize                         
+00008a21  SysCtl_getTLVInfo                          
+00008c1f  SysCtl_getTempCalibrationConstant          
+00008b8d  SysCtl_rebootDevice                        
+00008be3  SysCtl_setWDTPasswordViolationResetType    
+00008bbf  SysCtl_setWDTTimeoutResetType              
+0000a67f  SysTick_Handler                            
+2000073c  SystemCoreClock                            
+00007fcd  SystemCoreClockUpdate                      
+00008241  SystemInit                                 
+0000a67f  T32_INT1_IRQHandler                        
+0000a67f  T32_INT2_IRQHandler                        
+0000a67f  T32_INTC_IRQHandler                        
+0000a67f  TA0_0_IRQHandler                           
+00008919  TA0_N_IRQHandler                           
+00008919  TA0_N_IRQHandler                           
+000088bd  TA1_0_IRQHandler                           
+000088bd  TA1_0_IRQHandler                           
+0000a67f  TA1_N_IRQHandler                           
+0000a67f  TA2_0_IRQHandler                           
+000088f5  TA2_N_IRQHandler                           
+000088f5  TA2_N_IRQHandler                           
+000088d5  TA3_0_IRQHandler                           
+000088d5  TA3_0_IRQHandler                           
+0000a67f  TA3_N_IRQHandler                           
+0000882d  Timer_Setup                                
+0000a67f  UsageFault_Handler                         
+200006fa  VSS_Capt_Pointer                           
+20000734  VSS_Revolution                             
+4000480c  WDTCTL_SYM                                 
+0000a67f  WDT_A_IRQHandler                           
+00009c45  WDT_A_clearTimer                           
+00009c05  WDT_A_holdTimer                            
+00009c81  WDT_A_initIntervalTimer                    
+00009c65  WDT_A_initWatchdogTimer                    
+00009cb5  WDT_A_registerInterrupt                    
+00009c9d  WDT_A_setPasswordViolationReset            
+00009ca9  WDT_A_setTimeoutReset                      
+00009c25  WDT_A_startTimer                           
+00009cc9  WDT_A_unregisterInterrupt                  
+0000155b  __FlashCtl_remaskBurstDataPost             
+00001441  __FlashCtl_remaskBurstDataPre              
+00001285  __FlashCtl_remaskData32Post                
+00001369  __FlashCtl_remaskData32Pre                 
+00001167  __FlashCtl_remaskData8Post                 
+000011e7  __FlashCtl_remaskData8Pre                  
+20010000  __STACK_END                                
+00000200  __STACK_SIZE                               
+0000fcc0  __TI_CINIT_Base                            
+0000fcd8  __TI_CINIT_Limit                           
+0000fca4  __TI_Handler_Table_Base                    
+0000fcb0  __TI_Handler_Table_Limit                   
+0000a441  __TI_auto_init_nobinit_nopinit             
+0000a1e3  __TI_decompress_lzss                       
+0000a665  __TI_decompress_none                       
+ffffffff  __TI_pprof_out_hndl                        
+00002f9d  __TI_printfi                               
+ffffffff  __TI_prof_data_size                        
+ffffffff  __TI_prof_data_start                       
+00000000  __TI_static_base__                         
+0000a681  __TI_zero_init                             
+00009f81  __aeabi_cdcmpeq                            
+00009f81  __aeabi_cdcmple                            
+0000a007  __aeabi_cdrcmple                           
+0000a175  __aeabi_d2f                                
+0000a3f9  __aeabi_d2iz                               
+000091df  __aeabi_dadd                               
+00009669  __aeabi_ddiv                               
+00009b09  __aeabi_dmul                               
+000091d5  __aeabi_dsub                               
+0000a699  __aeabi_errno_addr                         
+0000a541  __aeabi_f2d                                
+0000a5ad  __aeabi_i2d                                
+000039eb  __aeabi_idiv0                              
+000039eb  __aeabi_ldiv0                              
+0000a08d  __aeabi_memclr                             
+0000a08d  __aeabi_memclr4                            
+0000a08d  __aeabi_memclr8                            
+00009e4f  __aeabi_memcpy                             
+00009e4f  __aeabi_memcpy4                            
+00009e4f  __aeabi_memcpy8                            
+0000a08f  __aeabi_memset                             
+0000a08f  __aeabi_memset4                            
+0000a08f  __aeabi_memset8                            
+00009eeb  __aeabi_uldivmod                           
+ffffffff  __binit__                                  
+ffffffff  __c_args__                                 
+UNDEFED   __mpu_init                                 
+2000fe00  __stack                                    
+0000a579  _c_int00_noargs                            
+0000f591  _ctypes_                                   
+UNDEFED   _system_post_cinit                         
+0000a6a1  _system_pre_init                           
+0000a6a5  abort                                      
+2000062c  actual_gear                                
+200005f8  addr_pointer                               
+0000a3ad  atoi                                       
+ffffffff  binit                                      
+20000608  carStatus                                  
+2000060c  car_status                                 
+00005913  clear_log_flash_on_first_startup           
+00002eeb  clockInit                                  
+200005c8  clocks                                     
+2000061c  clutch_counter                             
+20000620  clutch_flag                                
+0000a5f7  copysign                                   
+0000a5f7  copysignl                                  
+200005fc  currentPin                                 
+200006f0  delay_counter                              
+20000628  delay_flag                                 
+00002611  displayCarSystemChecks                     
+20000644  dont_error_check_flag                      
+20000730  down_count_data                            
+20000640  down_shift_counter                         
+20000738  errno                                      
+20000648  expected_gear                              
+00005871  first_time_run_check                       
+0000a24d  frexp                                      
+0000a24d  frexpl                                     
+20000000  g_pfnRAMVectors                            
+200005ac  g_sContext                                 
+0000f694  g_sFontCm20b                               
+0000f75c  g_sFontCm22b                               
+0000f824  g_sFontCm30b                               
+0000f8ec  g_sFontCm38b                               
+0000f9b4  g_sFontCmtt48                              
+0000facc  g_sKitronix320x240x16_SSD2119              
+200005d8  gearCheck                                  
+00002401  initSCREEN                                 
+00000000  interruptVectors                           
+000099f9  ldexp                                      
+000099f9  ldexpl                                     
+20000638  log_data_flag                              
+0000a307  ltoa                                       
+00009005  main                                       
+0000a5db  memccpy                                    
+00009e4f  memcpy                                     
+0000a095  memset                                     
+2000066c  printFlag                                  
+00002b19  printLOG                                   
+20000674  printLogFlag                               
+20000654  print_flag                                 
+20000634  print_nuetral_flag                         
+200004e4  read_shift_data                            
+00005a5b  recall_pin                                 
+000099f9  scalbn                                     
+000099f9  scalbnl                                    
+20000670  secCounter                                 
+20000668  shift_MPH                                  
+20000664  shift_RPM                                  
+20000624  shift_flag                                 
+2000064c  shift_request                              
+20000658  shift_type_flag                            
+20000618  shifter_counter                            
+20000630  shifting_flag                              
+0000a485  sprintf                                    
+20000678  state_Up                                   
+2000067a  state_d                                    
+20000600  status_ISR                                 
+0000a629  strchr                                     
+0000a63f  strlen                                     
+20000650  sucessful_shift_flag                       
+20000604  tempRPM                                    
+2000072c  up_count_data                              
+2000063c  up_shift_counter                           
+000024f3  updateSCREEN                               
+0000272d  updateTACH                                 
+0000a653  wcslen                                     
+000058e3  write_first_setup_bit                      
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                                       
+-------   ----                                       
+00000000  __TI_static_base__                         
+00000000  interruptVectors                           
+00000200  __STACK_SIZE                               
+0000028f  FlashCtl_getMemoryInfo                     
+0000060d  FlashCtl_enableReadBuffering               
+00000661  FlashCtl_disableReadBuffering              
+000006c1  FlashCtl_unprotectSector                   
+00000731  FlashCtl_protectSector                     
+00000791  FlashCtl_isSectorProtected                 
+0000081d  FlashCtl_verifyMemory                      
+00000a85  FlashCtl_setReadMode                       
+00000af1  FlashCtl_getReadMode                       
+00000b1b  FlashCtl_initiateMassErase                 
+00000b41  FlashCtl_performMassErase                  
+00000c8d  FlashCtl_eraseSector                       
+00000db1  FlashCtl_initiateSectorErase               
+00000e49  FlashCtl_programMemory                     
+00000fb9  FlashCtl_setProgramVerification            
+00000ff3  FlashCtl_clearProgramVerification          
+0000102d  FlashCtl_enableWordProgramming             
+0000105d  FlashCtl_disableWordProgramming            
+00001069  FlashCtl_isWordProgrammingEnabled          
+00001085  FlashCtl_setWaitState                      
+000010c3  FlashCtl_getWaitState                      
+000010f1  FlashCtl_enableInterrupt                   
+00001105  FlashCtl_disableInterrupt                  
+00001119  FlashCtl_getInterruptStatus                
+0000111f  FlashCtl_getEnabledInterruptStatus         
+0000112f  FlashCtl_clearInterruptFlag                
+00001143  FlashCtl_registerInterrupt                 
+00001157  FlashCtl_unregisterInterrupt               
+00001167  __FlashCtl_remaskData8Post                 
+000011e7  __FlashCtl_remaskData8Pre                  
+00001285  __FlashCtl_remaskData32Post                
+00001369  __FlashCtl_remaskData32Pre                 
+00001441  __FlashCtl_remaskBurstDataPre              
+0000155b  __FlashCtl_remaskBurstDataPost             
+000018e5  CS_setExternalClockSourceFrequency         
+00001921  CS_initClockSignal                         
+00001a25  CS_startHFXT                               
+00001a49  CS_startHFXTWithTimeout                    
+00001b0d  CS_startLFXT                               
+00001b31  CS_startLFXTWithTimeout                    
+00001c01  CS_enableClockRequest                      
+00001c29  CS_disableClockRequest                     
+00001c4b  CS_setReferenceOscillatorFrequency         
+00001c71  CS_enableDCOExternalResistor               
+00001c99  CS_setDCOExternalResistorCalibration       
+00001d0f  CS_disableDCOExternalResistor              
+00001d2d  CS_setDCOCenteredFrequency                 
+00001d65  CS_tuneDCOFrequency                        
+00001e09  CS_getDCOFrequency                         
+00001fad  CS_setDCOFrequency                         
+00002185  CS_getBCLK                                 
+000021a1  CS_getHSMCLK                               
+000021c5  CS_getACLK                                 
+000021e9  CS_getSMCLK                                
+0000220b  CS_getMCLK                                 
+0000222d  CS_enableFaultCounter                      
+00002259  CS_disableFaultCounter                     
+00002285  CS_resetFaultCounter                       
+000022d1  CS_startFaultCounter                       
+00002321  CS_enableInterrupt                         
+00002343  CS_disableInterrupt                        
+00002365  CS_getInterruptStatus                      
+0000236b  CS_getEnabledInterruptStatus               
+00002385  CS_clearInterruptFlag                      
+000023a7  CS_registerInterrupt                       
+000023bb  CS_unregisterInterrupt                     
+00002401  initSCREEN                                 
+000024f3  updateSCREEN                               
+00002611  displayCarSystemChecks                     
+0000272d  updateTACH                                 
+00002ab1  Print_Gear                                 
+00002b19  printLOG                                   
+00002eeb  clockInit                                  
+00002f31  Delay                                      
+00002f9d  __TI_printfi                               
+000039eb  __aeabi_idiv0                              
+000039eb  __aeabi_ldiv0                              
+00003a1d  SPI_initMaster                             
+00003ae3  SPI_selectFourPinFunctionality             
+00003b09  SPI_changeMasterClock                      
+00003b31  SPI_initSlave                              
+00003baf  SPI_changeClockPhasePolarity               
+00003bdf  SPI_transmitData                           
+00003c05  SPI_receiveData                            
+00003c21  SPI_enableModule                           
+00003c3d  SPI_disableModule                          
+00003c59  SPI_getReceiveBufferAddressForDMA          
+00003c75  SPI_getTransmitBufferAddressForDMA         
+00003ca1  SPI_isBusy                                 
+00003cbd  SPI_enableInterrupt                        
+00003ce3  SPI_disableInterrupt                       
+00003d09  SPI_getInterruptStatus                     
+00003d31  SPI_getEnabledInterruptStatus              
+00003d61  SPI_clearInterruptFlag                     
+00003d87  SPI_registerInterrupt                      
+00003e45  SPI_unregisterInterrupt                    
+00003ef1  EUSCI_B_SPI_select4PinFunctionality        
+00003f11  EUSCI_B_SPI_masterChangeClock              
+00003f43  EUSCI_B_SPI_slaveInit                      
+00003f8d  EUSCI_B_SPI_changeClockPhasePolarity       
+00003fcf  EUSCI_B_SPI_transmitData                   
+00003fe5  EUSCI_B_SPI_receiveData                    
+00003ff5  EUSCI_B_SPI_enableInterrupt                
+0000400f  EUSCI_B_SPI_disableInterrupt               
+00004029  EUSCI_B_SPI_getInterruptStatus             
+00004041  EUSCI_B_SPI_clearInterruptFlag             
+0000405b  EUSCI_B_SPI_enable                         
+00004071  EUSCI_B_SPI_disable                        
+00004087  EUSCI_B_SPI_getReceiveBufferAddressForDMA  
+00004095  EUSCI_B_SPI_getTransmitBufferAddressForDMA 
+000040a3  EUSCI_B_SPI_isBusy                         
+000040bb  EUSCI_A_SPI_select4PinFunctionality        
+000040db  EUSCI_A_SPI_masterChangeClock              
+00004111  EUSCI_A_SPI_slaveInit                      
+0000415b  EUSCI_A_SPI_changeClockPhasePolarity       
+0000419d  EUSCI_A_SPI_transmitData                   
+000041b3  EUSCI_A_SPI_receiveData                    
+000041c3  EUSCI_A_SPI_enableInterrupt                
+000041dd  EUSCI_A_SPI_disableInterrupt               
+000041f7  EUSCI_A_SPI_getInterruptStatus             
+0000420f  EUSCI_A_SPI_clearInterruptFlag             
+00004229  EUSCI_A_SPI_enable                         
+0000423f  EUSCI_A_SPI_disable                        
+00004255  EUSCI_A_SPI_getReceiveBufferAddressForDMA  
+00004263  EUSCI_A_SPI_getTransmitBufferAddressForDMA 
+00004271  EUSCI_A_SPI_isBusy                         
+00004387  PCM_setCoreVoltageLevel                    
+00004397  PCM_setCoreVoltageLevelWithTimeout         
+000043a9  PCM_setCoreVoltageLevelNonBlocking         
+000043b9  PCM_getPowerMode                           
+00004413  PCM_getCoreVoltageLevel                    
+000045b9  PCM_setPowerMode                           
+000045c9  PCM_setPowerModeNonBlocking                
+000045d9  PCM_setPowerModeWithTimeout                
+0000488b  PCM_setPowerState                          
+0000489b  PCM_setPowerStateWithTimeout               
+000048ad  PCM_setPowerStateNonBlocking               
+000048bd  PCM_shutdownDevice                         
+00004901  PCM_gotoLPM4                               
+00004911  PCM_gotoLPM4InterruptSafe                  
+0000492d  PCM_gotoLPM0                               
+0000494b  PCM_gotoLPM0InterruptSafe                  
+00004967  PCM_gotoLPM3                               
+000049df  PCM_gotoLPM3InterruptSafe                  
+000049fb  PCM_getPowerState                          
+00004a07  PCM_enableRudeMode                         
+00004a19  PCM_disableRudeMode                        
+00004a2d  PCM_enableInterrupt                        
+00004a41  PCM_disableInterrupt                       
+00004a55  PCM_getInterruptStatus                     
+00004a5b  PCM_getEnabledInterruptStatus              
+00004a6b  PCM_clearInterruptFlag                     
+00004a7f  PCM_registerInterrupt                      
+00004a93  PCM_unregisterInterrupt                    
+00004ac9  Kitronix320x240x16_SSD2119Init             
+00004c83  Kitronix320x240x16_SSD2119_setCursorLtoR   
+00004cbf  Kitronix320x240x16_SSD2119_setCursorTtoB   
+00004f41  Kitronix320x240x16_SSD2119LineDraw         
+00005281  Graphics_getStringWidth                    
+0000537b  Graphics_drawString                        
+000057f9  Graphics_getStringBaseline                 
+00005809  Graphics_drawStringCentered                
+00005851  Graphics_getStringHeight                   
+00005861  Graphics_getStringMaxWidth                 
+00005871  first_time_run_check                       
+000058e3  write_first_setup_bit                      
+00005913  clear_log_flash_on_first_startup           
+000059d7  Commit_Gear_To_Flash                       
+00005a19  Log_Counter_Data                           
+00005a5b  recall_pin                                 
+00005ab9  Log_Shift_Data                             
+00005da5  Read_Shift_Data_From_Flash                 
+00005e09  Read_Counter_Data                          
+00005e49  RTC_C_startClock                           
+00005e67  RTC_C_holdClock                            
+00005e85  RTC_C_setCalibrationFrequency              
+00005eb5  RTC_C_setCalibrationData                   
+00005ee1  RTC_C_setTemperatureCompensation           
+00005f0b  RTC_C_initCalendar                         
+00005f7d  RTC_C_getCalendarTime                      
+00005fe3  RTC_C_setCalendarAlarm                     
+0000601b  RTC_C_setCalendarEvent                     
+0000604b  RTC_C_definePrescaleEvent                  
+00006073  RTC_C_getPrescaleValue                     
+0000609f  RTC_C_setPrescaleValue                     
+000060ef  RTC_C_convertBCDToBinary                   
+00006107  RTC_C_convertBinaryToBCD                   
+0000611f  RTC_C_enableInterrupt                      
+00006175  RTC_C_disableInterrupt                     
+000061dd  RTC_C_getInterruptStatus                   
+00006245  RTC_C_getEnabledInterruptStatus            
+000062a5  RTC_C_clearInterruptFlag                   
+000062eb  RTC_C_registerInterrupt                    
+00006309  RTC_C_unregisterInterrupt                  
+00006351  Graphics_drawCircle                        
+000065bf  Graphics_fillCircle                        
+000067e9  Graphics_drawLineH                         
+00006885  Graphics_drawLineV                         
+00006b05  Graphics_drawLine                          
+00006c79  GPIO_setAsOutputPin                        
+00006cb3  GPIO_setAsInputPin                         
+00006cf9  GPIO_setAsPeripheralModuleFunctionOutputPin
+00006d7d  GPIO_setAsPeripheralModuleFunctionInputPin 
+00006e01  GPIO_setOutputHighOnPin                    
+00006e23  GPIO_setOutputLowOnPin                     
+00006e45  GPIO_toggleOutputOnPin                     
+00006e67  GPIO_setAsInputPinWithPullDownResistor     
+00006eb9  GPIO_setAsInputPinWithPullUpResistor       
+00006f0b  GPIO_getInputPinValue                      
+00006f39  GPIO_enableInterrupt                       
+00006f5b  GPIO_disableInterrupt                      
+00006f7d  GPIO_getInterruptStatus                    
+00006f9b  GPIO_clearInterruptFlag                    
+00006fbd  GPIO_interruptEdgeSelect                   
+00006ff3  GPIO_getEnabledInterruptStatus             
+0000706f  GPIO_setDriveStrengthHigh                  
+00007091  GPIO_setDriveStrengthLow                   
+000070b3  GPIO_registerInterrupt                     
+000070d3  GPIO_unregisterInterrupt                   
+00007165  Graphics_drawImage                         
+000074b9  Graphics_getImageColors                    
+000074c7  Graphics_getImageHeight                    
+000074d5  Graphics_getImageWidth                     
+000074e3  Graphics_getOffscreen1BppImageSize         
+00007509  Graphics_getOffscreen4BppImageSize         
+0000752d  Graphics_getOffScreen8BPPSize              
+0000754f  Interrupt_enableMaster                     
+0000755f  Interrupt_disableMaster                    
+0000756f  Interrupt_registerInterrupt                
+000075c1  Interrupt_unregisterInterrupt              
+000075d5  Interrupt_setPriorityGrouping              
+000075ef  Interrupt_getPriorityGrouping              
+00007627  Interrupt_setPriority                      
+00007677  Interrupt_getPriority                      
+0000769d  Interrupt_enableInterrupt                  
+0000770f  Interrupt_disableInterrupt                 
+00007781  Interrupt_isEnabled                        
+0000780d  Interrupt_pendInterrupt                    
+0000787d  Interrupt_unpendInterrupt                  
+000078cb  Interrupt_setPriorityMask                  
+000078db  Interrupt_getPriorityMask                  
+000078e5  Interrupt_setVectorTableAddress            
+000078f5  Interrupt_getVectorTableAddress            
+000078fb  Interrupt_enableSleepOnIsrExit             
+0000790d  Interrupt_disableSleepOnIsrExit            
+0000793d  Read_Inputs                                
+000079c1  Calculate_VSS_TO_RPM                       
+00007a0d  Calculate_Gear                             
+00007c8d  Graphics_drawRectangle                     
+00007d2f  Graphics_fillRectangle                     
+00007e41  Graphics_isRectangleOverlap                
+00007e93  Graphics_getRectangleIntersection          
+00007f79  Graphics_isPointWithinRectangle            
+00007fcd  SystemCoreClockUpdate                      
+00008241  SystemInit                                 
+00008565  Graphics_initContext                       
+000085af  Graphics_setClipRegion                     
+00008679  Graphics_setBackgroundColor                
+00008693  Graphics_setBackgroundColorTranslated      
+000086a9  Graphics_setFont                           
+000086c3  Graphics_getFontBaseline                   
+000086d1  Graphics_setForegroundColor                
+000086e7  Graphics_setForegroundColorTranslated      
+000086f9  Graphics_getFontHeight                     
+00008707  Graphics_getFontMaxWidth                   
+00008715  Graphics_getDisplayWidth                   
+00008725  Graphics_getDisplayHeight                  
+00008735  Graphics_getHeightOfDisplay                
+00008743  Graphics_flushBuffer                       
+00008751  Graphics_clearDisplay                      
+00008763  Graphics_drawPixel                         
+000087bd  Graphics_getWidthOfDisplay                 
+000087cd  Clock_Init                                 
+0000882d  Timer_Setup                                
+000088bd  TA1_0_IRQHandler                           
+000088bd  TA1_0_IRQHandler                           
+000088d5  TA3_0_IRQHandler                           
+000088d5  TA3_0_IRQHandler                           
+000088f5  TA2_N_IRQHandler                           
+000088f5  TA2_N_IRQHandler                           
+00008919  TA0_N_IRQHandler                           
+00008919  TA0_N_IRQHandler                           
+00008943  Enable_A1_Timeout                          
+0000894b  Disable_A1_Timeout                         
+00008953  Enable_A2_Timeout                          
+0000895b  Disable_A2_Timeout                         
+00008963  Clear_A1_Timeout                           
+0000896b  Clear_A2_Timeout                           
+00008973  Enable_A3_Timeout                          
+0000897d  Disable_A3_Timeout                         
+00008985  Clear_A3_Timeout                           
+0000898d  Delay_Time                                 
+00008a21  SysCtl_getTLVInfo                          
+00008a97  SysCtl_getSRAMSize                         
+00008a9d  SysCtl_getFlashSize                        
+00008aa3  SysCtl_disableNMISource                    
+00008ab7  SysCtl_enableNMISource                     
+00008acb  SysCtl_getNMISourceStatus                  
+00008ad1  SysCtl_enableSRAMBank                      
+00008aed  SysCtl_disableSRAMBank                     
+00008b55  SysCtl_enableSRAMBankRetention             
+00008b71  SysCtl_disableSRAMBankRetention            
+00008b8d  SysCtl_rebootDevice                        
+00008b97  SysCtl_enablePeripheralAtCPUHalt           
+00008bab  SysCtl_disablePeripheralAtCPUHalt          
+00008bbf  SysCtl_setWDTTimeoutResetType              
+00008be3  SysCtl_setWDTPasswordViolationResetType    
+00008c07  SysCtl_enableGlitchFilter                  
+00008c13  SysCtl_disableGlitchFilter                 
+00008c1f  SysCtl_getTempCalibrationConstant          
+00008c65  Nuetral_Inputs_Setup                       
+00008c79  OIL_Pressure_Setup                         
+00008c85  RPM_VSS_Input_Setup                        
+00008c9b  PORT1_IRQHandler                           
+00008c9b  PORT1_IRQHandler                           
+00008ccd  PORT2_IRQHandler                           
+00008ccd  PORT2_IRQHandler                           
+00008cf5  PORT3_IRQHandler                           
+00008cf5  PORT3_IRQHandler                           
+00008d41  DebounceFindNuetral                        
+00008d6d  ReadBtnFindN                               
+00008d79  DebounceNuetralIn                          
+00008da5  ReadBtnNuetralIn                           
+00008db3  PortInit                                   
+00008dd3  CheckSystemInputs                          
+00009005  main                                       
+00009151  Compare_Gears                              
+000091d5  __aeabi_dsub                               
+000091df  __aeabi_dadd                               
+0000938d  HAL_LCD_initLCD                            
+00009439  HAL_LCD_writeCommand                       
+0000946d  HAL_LCD_writeData                          
+000094b3  HAL_LCD_selectLCD                          
+000094c9  HAL_LCD_deselectLCD                        
+000094df  HAL_LCD_delay                              
+00009669  __aeabi_ddiv                               
+0000979f  Graphics_drawPixelOnDisplay                
+000097c9  Graphics_drawMultiplePixelsOnDisplay       
+0000980d  Graphics_drawHorizontalLineOnDisplay       
+00009841  Graphics_drawVerticalLineOnDisplay         
+00009875  Graphics_fillRectangleOnDisplay            
+00009893  Graphics_translateColorOnDisplay           
+000098a9  Graphics_flushOnDisplay                    
+000098bb  Graphics_clearDisplayOnDisplay             
+000099f9  ldexp                                      
+000099f9  ldexpl                                     
+000099f9  scalbn                                     
+000099f9  scalbnl                                    
+00009b09  __aeabi_dmul                               
+00009c05  WDT_A_holdTimer                            
+00009c25  WDT_A_startTimer                           
+00009c45  WDT_A_clearTimer                           
+00009c65  WDT_A_initWatchdogTimer                    
+00009c81  WDT_A_initIntervalTimer                    
+00009c9d  WDT_A_setPasswordViolationReset            
+00009ca9  WDT_A_setTimeoutReset                      
+00009cb5  WDT_A_registerInterrupt                    
+00009cc9  WDT_A_unregisterInterrupt                  
+00009cdd  FPU_enableModule                           
+00009cef  FPU_disableModule                          
+00009cfd  FPU_enableStacking                         
+00009d0f  FPU_enableLazyStacking                     
+00009d1b  FPU_disableStacking                        
+00009d27  FPU_setHalfPrecisionMode                   
+00009d41  FPU_setNaNMode                             
+00009d5b  FPU_setFlushToZeroMode                     
+00009d75  FPU_setRoundingMode                        
+00009e4f  __aeabi_memcpy                             
+00009e4f  __aeabi_memcpy4                            
+00009e4f  __aeabi_memcpy8                            
+00009e4f  memcpy                                     
+00009eeb  __aeabi_uldivmod                           
+00009f81  __aeabi_cdcmpeq                            
+00009f81  __aeabi_cdcmple                            
+0000a007  __aeabi_cdrcmple                           
+0000a08d  __aeabi_memclr                             
+0000a08d  __aeabi_memclr4                            
+0000a08d  __aeabi_memclr8                            
+0000a08f  __aeabi_memset                             
+0000a08f  __aeabi_memset4                            
+0000a08f  __aeabi_memset8                            
+0000a095  memset                                     
+0000a175  __aeabi_d2f                                
+0000a1e3  __TI_decompress_lzss                       
+0000a24d  frexp                                      
+0000a24d  frexpl                                     
+0000a307  ltoa                                       
+0000a3ad  atoi                                       
+0000a3f9  __aeabi_d2iz                               
+0000a441  __TI_auto_init_nobinit_nopinit             
+0000a485  sprintf                                    
+0000a503  CPU_cpsid                                  
+0000a50f  CPU_primask                                
+0000a519  CPU_cpsie                                  
+0000a525  CPU_wfi                                    
+0000a529  CPU_basepriSet                             
+0000a537  CPU_basepriGet                             
+0000a541  __aeabi_f2d                                
+0000a579  _c_int00_noargs                            
+0000a5ad  __aeabi_i2d                                
+0000a5db  memccpy                                    
+0000a5f7  copysign                                   
+0000a5f7  copysignl                                  
+0000a629  strchr                                     
+0000a63f  strlen                                     
+0000a653  wcslen                                     
+0000a665  __TI_decompress_none                       
+0000a673  Reset_Handler                              
+0000a67f  ADC14_IRQHandler                           
+0000a67f  AES256_IRQHandler                          
+0000a67f  BusFault_Handler                           
+0000a67f  COMP_E0_IRQHandler                         
+0000a67f  COMP_E1_IRQHandler                         
+0000a67f  CS_IRQHandler                              
+0000a67f  DMA_ERR_IRQHandler                         
+0000a67f  DMA_INT0_IRQHandler                        
+0000a67f  DMA_INT1_IRQHandler                        
+0000a67f  DMA_INT2_IRQHandler                        
+0000a67f  DMA_INT3_IRQHandler                        
+0000a67f  DebugMon_Handler                           
+0000a67f  Default_Handler                            
+0000a67f  EUSCIA0_IRQHandler                         
+0000a67f  EUSCIA1_IRQHandler                         
+0000a67f  EUSCIA2_IRQHandler                         
+0000a67f  EUSCIA3_IRQHandler                         
+0000a67f  EUSCIB0_IRQHandler                         
+0000a67f  EUSCIB1_IRQHandler                         
+0000a67f  EUSCIB2_IRQHandler                         
+0000a67f  EUSCIB3_IRQHandler                         
+0000a67f  FLCTL_IRQHandler                           
+0000a67f  FPU_IRQHandler                             
+0000a67f  HardFault_Handler                          
+0000a67f  MemManage_Handler                          
+0000a67f  NMI_Handler                                
+0000a67f  PCM_IRQHandler                             
+0000a67f  PORT4_IRQHandler                           
+0000a67f  PORT5_IRQHandler                           
+0000a67f  PORT6_IRQHandler                           
+0000a67f  PSS_IRQHandler                             
+0000a67f  PendSV_Handler                             
+0000a67f  RTC_C_IRQHandler                           
+0000a67f  SVC_Handler                                
+0000a67f  SysTick_Handler                            
+0000a67f  T32_INT1_IRQHandler                        
+0000a67f  T32_INT2_IRQHandler                        
+0000a67f  T32_INTC_IRQHandler                        
+0000a67f  TA0_0_IRQHandler                           
+0000a67f  TA1_N_IRQHandler                           
+0000a67f  TA2_0_IRQHandler                           
+0000a67f  TA3_N_IRQHandler                           
+0000a67f  UsageFault_Handler                         
+0000a67f  WDT_A_IRQHandler                           
+0000a681  __TI_zero_init                             
+0000a699  __aeabi_errno_addr                         
+0000a6a1  _system_pre_init                           
+0000a6a5  C$$EXIT                                    
+0000a6a5  abort                                      
+0000f591  _ctypes_                                   
+0000f694  g_sFontCm20b                               
+0000f75c  g_sFontCm22b                               
+0000f824  g_sFontCm30b                               
+0000f8ec  g_sFontCm38b                               
+0000f9b4  g_sFontCmtt48                              
+0000facc  g_sKitronix320x240x16_SSD2119              
+0000fb64  Gear1BPP_UNCOMP                            
+0000fb74  N1BPP_UNCOMP                               
+0000fca4  __TI_Handler_Table_Base                    
+0000fcb0  __TI_Handler_Table_Limit                   
+0000fcc0  __TI_CINIT_Base                            
+0000fcd8  __TI_CINIT_Limit                           
+20000000  g_pfnRAMVectors                            
+200004e4  read_shift_data                            
+200005ac  g_sContext                                 
+200005c8  clocks                                     
+200005d8  gearCheck                                  
+200005ec  RPMc                                       
+200005f4  Speedc                                     
+200005f8  addr_pointer                               
+200005fc  currentPin                                 
+20000600  status_ISR                                 
+20000604  tempRPM                                    
+20000608  carStatus                                  
+2000060c  car_status                                 
+20000610  Calc_Gear                                  
+20000614  Calc_RPM                                   
+20000618  shifter_counter                            
+2000061c  clutch_counter                             
+20000620  clutch_flag                                
+20000624  shift_flag                                 
+20000628  delay_flag                                 
+2000062c  actual_gear                                
+20000630  shifting_flag                              
+20000634  print_nuetral_flag                         
+20000638  log_data_flag                              
+2000063c  up_shift_counter                           
+20000640  down_shift_counter                         
+20000644  dont_error_check_flag                      
+20000648  expected_gear                              
+2000064c  shift_request                              
+20000650  sucessful_shift_flag                       
+20000654  print_flag                                 
+20000658  shift_type_flag                            
+2000065c  MPH_IN                                     
+20000660  RPM_IN                                     
+20000664  shift_RPM                                  
+20000668  shift_MPH                                  
+2000066c  printFlag                                  
+20000670  secCounter                                 
+20000674  printLogFlag                               
+20000678  state_Up                                   
+2000067a  state_d                                    
+200006ec  Input_Capt_ISR_Status                      
+200006f0  delay_counter                              
+200006f4  Read_Count                                 
+200006f8  RPM_Capt_Pointer                           
+200006fa  VSS_Capt_Pointer                           
+200006fc  Pulse_Count_RPM                            
+20000700  Pulse_Count_VSS                            
+20000704  Active_Gear_Ratio                          
+20000718  Nuetral_Flag                               
+2000071c  Nuetral_IN                                 
+20000720  Oil_IN                                     
+20000724  Find_Nuetral_IN                            
+2000072c  up_count_data                              
+20000730  down_count_data                            
+20000734  VSS_Revolution                             
+20000738  errno                                      
+2000073c  SystemCoreClock                            
+2000fe00  __stack                                    
+20010000  __STACK_END                                
+4000480c  WDTCTL_SYM                                 
+ffffffff  __TI_pprof_out_hndl                        
+ffffffff  __TI_prof_data_size                        
+ffffffff  __TI_prof_data_start                       
+ffffffff  __binit__                                  
+ffffffff  __c_args__                                 
+ffffffff  binit                                      
+UNDEFED   __mpu_init                                 
+UNDEFED   _system_post_cinit                         
+
+[542 symbols]

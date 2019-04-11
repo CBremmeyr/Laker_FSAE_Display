@@ -1,0 +1,6 @@
+.ccsproject
+.cproject
+.project
+.settings/
+msp432p401r.cmd
+targetConfigs/
